@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Modal, Typography, Button, ButtonGroup, Grid, Box, CircularProgress, useMediaQuery, Rating } from '@mui/material';
 import { Movie as MovieIcon, Theaters, Language, PlusOne, Favorite, FavoriteBorderOutlined, Remove, ArrowBack } from '@mui/icons-material';
 import { Link, useParams } from 'react-router-dom';
@@ -16,6 +16,7 @@ const MovieInformation = () => {
   const {data: recommendations, isFetching: isRecommendationsFetching} = useGetRecommendationsQuery({list: '/recommendations', movie_id: id})
   const classes = useStyles();
   const dispatch = useDispatch();
+  const [open, setOpen] = useState(false);
 
   const isMovieFavorited = false;
   const isMovieWatchlisted = true;
@@ -112,7 +113,7 @@ const MovieInformation = () => {
                 <Button target='_blank' rel='noopener noreferrer' href={`https://www.imdb.com/title/${data?.imdb_id}`} endIcon={<MovieIcon />}>
                   IMDB
                 </Button>
-                <Button onClick={() => {}} href='#' endIcon={<Theaters />}>
+                <Button onClick={() => setOpen(true)} href='#' endIcon={<Theaters />}>
                   Trailer
                 </Button>
               </ButtonGroup>
@@ -144,6 +145,23 @@ const MovieInformation = () => {
           : <Box>Sorry, no recommended movies.</Box>
         }
       </Box>
+      <Modal
+        closeAfterTransition
+        className={classes.modal}
+        open={open}
+        onClose={() => setOpen(false)}
+      >
+        {data?.videos?.results?.length > 0 && (
+          <iframe 
+            autoPlay
+            className={classes.video}
+            frameBorder='0'
+            title='Trailer'
+            src={`https://www.youtube.com/embed/${data.videos.results[0].key}`}
+            allow='autoplay'
+          />
+        )}
+      </Modal>
     </Grid>
   )
 }
