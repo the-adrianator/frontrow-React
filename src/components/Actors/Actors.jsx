@@ -1,18 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Button, CircularProgress, Grid, Typography } from '@mui/material';
 import { useHistory, useParams } from 'react-router-dom';
 import { ArrowBack } from '@mui/icons-material';
 import useStyles from './styles';
 import { useGetActorDetailsQuery, useGetMoviesByActorIdQuery } from '../../services/TMDB';
-import { MovieList } from '..';
-
-// use useParams to get the actor's id
-// make a new call using redux toolkit query -> get actor details call..
-// research tmdb api docs...
-// use newly created useGetActorDetails hook yo get actor's info to the component
+import { MovieList, Pagination } from '..';
 
 const Actors = () => {
-  const page = 1;
+  const [page, setPage] = useState(1);
   const {id} = useParams();
   const { data, isFetching, error } = useGetActorDetailsQuery(id);
   const {data: movies} = useGetMoviesByActorIdQuery({id, page});
@@ -68,6 +63,7 @@ const Actors = () => {
           Movies by actor/actress
         </Typography>
         {movies && <MovieList movies={movies} numberOfMovies={12} />}
+        <Pagination currentPage={page} setPage={setPage} totalPages={movies?.total_pages} />
       </Box>
     </>
   )
