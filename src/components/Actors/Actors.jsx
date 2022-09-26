@@ -31,20 +31,22 @@ const Actors = () => {
   return (
     <>
       <Grid container spacing={3}>
-        <Grid item lg={5} xl={4}>
+        <Grid item lg={5} xl={4} sx={{display: 'flex', justifyContent: 'center', width: '100%'}}>
           <img 
             className={classes.image}
             src={`https://image.tmdb.org/t/p/w780/${data?.profile_path}`}
             alt={data.name}
           />
         </Grid>
-        <Grid item lg={7} xl={8} style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
-          <Typography variant='h2' gutterBottom>
-            {data?.name}
-          </Typography>
-          <Typography variant='h5' gutterBottom>
-            Born: {new Date(data?.birthday).toDateString()}
-          </Typography>
+        <Grid item lg={7} xl={8} style={{ display: 'flex', justifyContent: 'center',flexDirection: 'column' }}>
+          <Box style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', textAlign: 'center'}}>
+            <Typography variant='h2' gutterBottom>
+              {data?.name}
+            </Typography>
+            <Typography variant='h5' gutterBottom>
+              Born: {new Date(data?.birthday).toDateString()}
+            </Typography>
+          </Box>
           <Typography variant='body1' align='justify' paragraph>
             {data?.biography || 'Sorry this Actor/Actress has no biography yet...'}
           </Typography>
