@@ -52,7 +52,7 @@ export default makeStyles((theme) => ({
     maxWidth: '7em',
     height: '8em',
     objectFit: 'cover',
-    borderWidth: '10px'
+    borderRadius: '10px'
   },
   buttonsContainer: {
     display: 'flex',
