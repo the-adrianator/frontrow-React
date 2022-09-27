@@ -58,13 +58,16 @@ const MovieInformation = () => {
         <CircularProgress size='8rem' />
       </Box>
     )
-  } else if (error) {
+  };
+  
+  if (error) {
       return (
         <Box display='flex' justifyContent='center' alignItems='center'>
           <Link to='/'>Something went wrong... Go back!</Link>
         </Box>
     )
-  }
+  };
+  
   return (
     <Grid container className={classes.containerSpaceAround}>
       <Grid item sm={12} lg={4} sx={{display: 'flex', justifyContent: 'center', marginBottom: '30px'}}>

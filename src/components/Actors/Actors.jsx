@@ -62,7 +62,7 @@ const Actors = () => {
       </Grid>
       <Box margin='2rem 0'>
         <Typography variant='h2' gutterBottom align='center'>
-          Movies by actor/actress
+          Movies featuring {data?.name}
         </Typography>
         {movies && <MovieList movies={movies} numberOfMovies={12} />}
         <Pagination currentPage={page} setPage={setPage} totalPages={movies?.total_pages} />

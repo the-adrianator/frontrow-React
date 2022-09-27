@@ -23,8 +23,7 @@ const Profile = () => {
 
     window.location.href = '/';
   }
-
-  console.log(user.username);
+  
   return (
     <Box>
       <Box display='flex' justifyContent='space-between'>
