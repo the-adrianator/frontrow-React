@@ -75,7 +75,7 @@ const NavBar = () => {
                 <Avatar 
                   style={{width: 30, height: 30}}
                   alt="Profile"
-                  src='https://avatarairlines.com/wp-content/uploads/2020/05/Male-placeholder.jpeg'
+                  src={`https://www.themoviedb.org/t/p/w64_and_h64_face${user?.avatar?.tmdb?.avatar_path}`}
                 />
               </Button>
             )}
