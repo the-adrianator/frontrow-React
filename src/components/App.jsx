@@ -1,9 +1,9 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { CssBaseline } from '@mui/material';
 import { Route, Switch } from 'react-router-dom';
 
 import useStyles from './styles';
-import useAlan from '../Alan';
+// import useAlan from '../Alan';
 
 import Actors from './Actors/Actors';
 import MovieInformation from './MovieInformation/MovieInformation';
@@ -13,9 +13,9 @@ import Profile from './Profile/Profile';
 
 const App = () => {
   const classes = useStyles();
-  const alanBtnContainer = useRef();
+  // const alanBtnContainer = useRef();
 
-  useAlan();
+  // useAlan();
 
   return (
     <div className={classes.root}>
@@ -38,7 +38,7 @@ const App = () => {
           </Route>
         </Switch>
       </main>
-      <div ref={alanBtnContainer} />
+      {/* <div ref={alanBtnContainer} /> */}
     </div>
   );
 };
