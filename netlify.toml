@@ -1,0 +1,21 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[build.environment]
+  # Ensure CRA picks env variables
+  # REACT_APP_TMDB_KEY and REACT_APP_ALAN_KEY should be set in Netlify UI
+
+[secrets_scan]
+  # If build output includes env-substituted values, omit scanning built assets
+  omit_paths = [
+    "build/**"
+  ]
+  # Optionally omit specific env keys from scanning
+  omit_keys = [
+    "REACT_APP_TMDB_KEY",
+    "REACT_APP_ALAN_KEY"
+  ]
+  enabled = true
+
+
