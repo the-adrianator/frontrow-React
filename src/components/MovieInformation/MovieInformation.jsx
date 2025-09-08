@@ -27,7 +27,7 @@ import axios from 'axios';
 import { useGetMovieQuery, useGetRecommendationsQuery, useGetListQuery } from '../../services/TMDB';
 import useStyles from './styles';
 import genreIcons from '../../assets/genres';
-import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
+import { selectGenreOrCategory } from '../../features/currentGenreOrCategory.js';
 import MovieList from '../MovieList/MovieList';
 import { userSelector } from '../../features/auth';
 

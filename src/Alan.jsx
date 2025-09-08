@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import alanBtn from '@alan-ai/alan-sdk-web';
 import { ColorModeContext } from './utils/ToggleColorMode';
 import { fetchToken } from './utils';
-import { selectGenreOrCategory, searchMovie } from './features/currentGenreOrCategory';
+import { selectGenreOrCategory, searchMovie } from './features/currentGenreOrCategory.js';
 
 const useAlan = () => {
   const { setMode } = useContext(ColorModeContext);

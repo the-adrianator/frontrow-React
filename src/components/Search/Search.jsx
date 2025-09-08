@@ -4,7 +4,7 @@ import { Search as SearchIcon } from '@mui/icons-material';
 import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import useStyles from './styles';
-import { searchMovie } from '../../features/currentGenreOrCategory';
+import { searchMovie } from '../../features/currentGenreOrCategory.js';
 
 const Search = () => {
   const classes = useStyles();
