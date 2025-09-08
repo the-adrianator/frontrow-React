@@ -1,8 +1,8 @@
-import { makeStyles } from "@mui/styles";
+import { makeStyles } from '@mui/styles';
 
 export default makeStyles((theme) => ({
   movie: {
-    padding: '10px'
+    padding: '10px',
   },
   links: {
     alignItems: 'center',
@@ -10,11 +10,11 @@ export default makeStyles((theme) => ({
     textDecoration: 'none',
     [theme.breakpoints.up('xs')]: {
       display: 'flex',
-      flexDirection: 'column'
+      flexDirection: 'column',
     },
     '&:hover': {
       cursor: 'pointer',
-    }
+    },
   },
   image: {
     borderRadius: '20px',
@@ -22,8 +22,8 @@ export default makeStyles((theme) => ({
     marginBottom: '10px',
     transition: 'transform 0.5s',
     '&:hover': {
-      transform: 'scale(1.05)'
-    }
+      transform: 'scale(1.05)',
+    },
   },
   title: {
     color: theme.palette.text.primary,
@@ -33,6 +33,6 @@ export default makeStyles((theme) => ({
     overflow: 'hidden',
     marginTop: '10px',
     marginBottom: 0,
-    textAlign: 'center'
-  }
-}))
+    textAlign: 'center',
+  },
+}));

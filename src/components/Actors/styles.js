@@ -1,4 +1,4 @@
-import { makeStyles } from "@mui/styles";
+import { makeStyles } from '@mui/styles';
 
 export default makeStyles(() => ({
   image: {
@@ -6,6 +6,6 @@ export default makeStyles(() => ({
     width: 'auto',
     borderRadius: '20px',
     objectFit: 'cover',
-    boxShadow: '0.5em 0.5em 1em'
-  }
-}))
+    boxShadow: '0.5em 0.5em 1em',
+  },
+}));

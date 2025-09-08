@@ -1,10 +1,10 @@
 import React from 'react';
-import {Grid} from '@mui/material';
+import { Grid } from '@mui/material';
 
 import useStyles from './styles';
-import { Movie } from '..';
+import Movie from '../Movie/Movie';
 
-const MovieList = ({movies, numberOfMovies, excludeFirst}) => {
+const MovieList = ({ movies, numberOfMovies, excludeFirst }) => {
   const classes = useStyles();
   const startFrom = excludeFirst ? 1 : 0;
   return (
@@ -13,7 +13,7 @@ const MovieList = ({movies, numberOfMovies, excludeFirst}) => {
         <Movie key={idx} movie={movie} idx={idx} />
       ))}
     </Grid>
-  )
-}
+  );
+};
 
-export default MovieList
+export default MovieList;

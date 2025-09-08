@@ -1,4 +1,4 @@
-import { makeStyles } from "@mui/styles";
+import { makeStyles } from '@mui/styles';
 
 export default makeStyles((theme) => ({
   moviesContainer: {
@@ -7,7 +7,7 @@ export default makeStyles((theme) => ({
     justifyContent: 'space-between',
     overflow: 'auto',
     [theme.breakpoints.down('sm')]: {
-      justifyContent: 'center'
-    }
-  }
-}))
+      justifyContent: 'center',
+    },
+  },
+}));
